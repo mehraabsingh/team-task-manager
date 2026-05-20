@@ -21,8 +21,8 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      await axios.post(
-  "https://team-task-manager-r2i5.onrender.com/api/auth/login",
+      const res = await axios.post(
+        "https://team-task-manager-r2i5.onrender.com/api/auth/login",
         formData
       );
 
@@ -35,7 +35,10 @@ export default function Login() {
 
       navigate("/dashboard");
     } catch (error) {
-      alert(error.response.data.message);
+      alert(
+        error.response?.data?.message ||
+        "Something went wrong"
+      );
     }
   };
 

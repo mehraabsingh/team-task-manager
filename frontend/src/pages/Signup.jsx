@@ -23,7 +23,7 @@ export default function Signup() {
 
     try {
       await axios.post(
-        "https://team-task-manager-r2i5.onrender.com",
+        "https://team-task-manager-r2i5.onrender.com/api/auth/signup",
         formData
       );
 
@@ -31,7 +31,10 @@ export default function Signup() {
 
       navigate("/");
     } catch (error) {
-      alert(error.response.data.message);
+      alert(
+        error.response?.data?.message ||
+        "Something went wrong"
+      );
     }
   };
 
