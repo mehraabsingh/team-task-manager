@@ -23,7 +23,7 @@ export default function Signup() {
 
     try {
       await axios.post(
-        "http://localhost:8000/api/auth/signup",
+        "https://team-task-manager-r2i5.onrender.com",
         formData
       );
 
